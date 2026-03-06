@@ -76,8 +76,8 @@ export default function Navbar() {
 </a>
 
           <div className="mobile-social">
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaTiktok /></a>
+            <a href="https://instagram.com"><FaInstagram /></a>
+            <a href="https://tiktok.com"><FaTiktok /></a>
           </div>
         </div>
       </div>
