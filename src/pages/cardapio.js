@@ -171,7 +171,7 @@ const titulos = {
 
                 <p>{pratoSelecionado.desc}</p>
 
-                <a href={ifood} target="_blank">
+                <a href={ifood} target="_blank" rel="noopener noreferrer">
                   <button className="ifood-btn">
                     Pedir no iFood
                   </button>
