@@ -1,6 +1,5 @@
 .cardapio-page{
 display:flex;
-min-height:100vh;
 background:#fafafa;
 margin-top: 60px;
 }
@@ -99,11 +98,30 @@ border-radius:4px;
 
 /* PRATOS */
 
-.pratos{
-padding:20px;
-gap:30px;
+/* Faz a área de pratos rolar separadamente */
+.pratos {
+  padding: 20px;
+  gap: 30px;
+
+  /* Altura máxima ocupando a tela inteira menos o menu lateral */
+  max-height: calc(100vh - 60px); /* 60px = altura do navbar, ajuste se necessário */
+  overflow-y: auto; /* ativa a rolagem vertical */
 }
 
+/* Opcional: barra de rolagem estilizada */
+.pratos::-webkit-scrollbar {
+  width: 8px;
+}
+
+.pratos::-webkit-scrollbar-thumb {
+  background-color: #c9a35d;
+  border-radius: 4px;
+}
+
+.pratos::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
 .prato-card{
 background:white;
 border-radius:14px;
@@ -142,21 +160,6 @@ gap:30px;
 
 /* RESPONSIVO */
 
-@media(max-width:900px){
-
-.pratos-grid{
-grid-template-columns:1fr 1fr;
-}
-
-}
-
-@media(max-width:600px){
-
-.pratos-grid{
-grid-template-columns:1fr;
-}
-
-}
 .prato-card:hover{
 transform:translateY(-6px);
 }
@@ -248,36 +251,134 @@ cursor:pointer;
 
 /* RESPONSIVO */
 
-@media(max-width:1000px){
+/* RESPONSIVO MODERNO */
 
-.pratos{
-grid-template-columns:repeat(2,1fr);
+@media (max-width: 1000px) {
+  .cardapio-page {
+    margin-top: 90px;
+    flex-direction: column;
+  }
+
+  /* Menu lateral vira horizontal */
+  .menu-lateral {
+    width: 100%;
+    flex-direction: row;
+    justify-content: start;
+    gap: 10px;
+    padding: 10px 20px;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid #222;
+  }
+ .menu-lateral {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;        /* permite scroll horizontal com dedo */
+    -webkit-overflow-scrolling: touch; /* rolagem suave no iOS */
+    scrollbar-width: none;   
+  }
+
+  /* Chrome, Safari, Edge: esconde barra de rolagem */
+  .menu-lateral::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu-lateral h2 {
+    font-size: 18px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    white-space: nowrap;
+    color: #D4A017;
+  }
+
+  .menu-lateral button {
+    flex: 0 0 auto;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .menu-lateral button.ativo::before {
+    left: 0;
+    top: auto;
+    bottom: -2px;
+    width: 100%;
+    height: 4px;
+    border-radius: 0;
+  }
+
+  .pratos-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  .menu-lateral button.ativo::before{
+content:"";
+position:none;
+left:0px;
+top:0;
+height:100%;
+width:0px;
+background:#c9a35d;
+border-radius:4px;
+}
 }
 
-.modal-content{
-flex-direction:column;
+@media (max-width: 600px) {
+
+  /* Menu lateral scroll horizontal */
+  .menu-lateral {
+    gap: 8px;
+  }
+
+  .menu-lateral button {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  /* Pratos em coluna única */
+  .pratos-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .pratos-header h2 {
+    font-size: 26px;
+  }
+
+  /* Modal adapta verticalmente */
+  .modal-content {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;
+  }
+
+  .modal {
+    padding: 20px;
+  }
+
+  .ifood-btn {
+    width: 100%;
+    text-align: center;
+  }
 }
 
-.modal-content img{
-width:100%;
+/* Toque moderno: hover leve nos cards em mobile */
+@media (hover: hover) {
+  .prato-card:hover {
+    transform: translateY(-4px) scale(1.02);
+  }
 }
 
+/* Smooth scroll para menu horizontal */
+.menu-lateral {
+  scroll-behavior: smooth;
 }
 
-@media(max-width:700px){
-
-.cardapio-page{
-flex-direction:column;
-}
-
-.menu-lateral{
-width:100%;
-flex-direction:row;
-overflow-x:auto;
-}
-
-.pratos{
-grid-template-columns:1fr;
-}
-
+/* Sombra leve nos cards para profundidade */
+.prato-card {
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }

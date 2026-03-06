@@ -123,16 +123,79 @@
   font-size: 18px;
 }
 /* ===== RESPONSIVO ===== */
-@media(max-width:900px){
+/* ===== RESPONSIVO MOBILE ===== */
+@media (max-width: 900px) {
+  /* Container */
+  .container {
+    padding: 30px 15px;
+  }
+
+  /* Grid e intro-grid: coluna única */
   .grid, .intro-grid {
     grid-template-columns: 1fr;
+    gap: 30px; /* menor gap para mobile */
   }
 
-  .container {
-    padding: 40px 20px;
-  }
-
+  /* Texto principal */
   .intro-text h2, .historia-text h2 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .intro-text p, .historia-text p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Imagens adaptáveis */
+  .intro-img img, .historia-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+  }
+
+  /* Hero */
+  .historia-hero img {
+    height: 50vh; /* reduz altura no mobile */
+  }
+
+  /* Banner final */
+  .historia-banner img {
+    height: 40vh;
+  }
+
+  .banner-content h2 {
     font-size: 28px;
+  }
+
+  .banner-content p {
+    font-size: 16px;
+  }
+
+  .banner-line {
+    width: 40px;
+    height: 2px;
+    margin: 15px auto;
+  }
+
+  .banner-content span {
+    font-size: 16px;
+    letter-spacing: 2px;
+  }
+
+  /* Garante padding interno confortável */
+  .historia-hero, .historia-intro, .historia-tradicao, .historia-tecnologia, .historia-banner {
+    padding: 20px 10px;
+  }
+  .historia-tradicao .grid {
+    display: flex;
+    flex-direction: column-reverse; /* imagem acima do texto */
+    gap: 20px; /* espaçamento entre elementos */
+  }
+
+  /* Garantir que a imagem fique responsiva */
+  .historia-img img {
+    width: 100%;
+    height: auto;
   }
 }

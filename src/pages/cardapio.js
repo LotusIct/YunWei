@@ -28,6 +28,16 @@ const titulos = {
         nome: "Pipoca de Camarão",
         desc: "Camarões empanados crocantes com molho agridoce.",
         img: "https://images.unsplash.com/photo-1625943553852-781c6dd46faa",
+      },
+        {
+        nome: "Estalido da Floresta",
+        desc: "Shimeji branco crocante com pimentões coloridos e molho especial da casa.",
+        img: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d",
+      },
+      {
+        nome: "Pipoca de Camarão",
+        desc: "Camarões empanados crocantes com molho agridoce.",
+        img: "https://images.unsplash.com/photo-1625943553852-781c6dd46faa",
       }
     ],
 
