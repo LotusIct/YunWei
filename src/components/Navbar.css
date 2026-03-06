@@ -1,0 +1,249 @@
+/* ========================= */
+/* RESET BASE */
+/* ========================= */
+
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #ffffff;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* ========================= */
+/* CONTAINER */
+/* ========================= */
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 18px 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ========================= */
+/* LOGO */
+/* ========================= */
+
+.navbar-logo img {
+  height: 52px;
+  object-fit: contain;
+}
+
+/* ========================= */
+/* MENU DESKTOP */
+/* ========================= */
+
+.navbar-menu {
+  display: flex;
+  gap: 36px;
+}
+
+.navbar-menu a {
+  position: relative;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #11321F;
+  transition: all 0.3s ease;
+}
+
+/* Linha animada */
+.navbar-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  left: 0;
+  bottom: -6px;
+  background: #D4A017;
+  transition: width 0.3s ease;
+}
+
+.navbar-menu a:hover::after {
+  width: 100%;
+}
+
+.navbar-menu a:hover {
+  color: #D4A017;
+}
+
+/* ========================= */
+/* BOTÃO DELIVERY */
+/* ========================= */
+
+.delivery-btn {
+  background: transparent;
+  color: #D4A017;
+  border: 1px solid #D4A017;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.delivery-btn:hover {
+  background: #D4A017;
+  color: #11321F;
+  transform: translateY(-2px);
+}
+
+/* ========================= */
+/* HAMBURGER */
+/* ========================= */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: #11321F;
+  transition: all 0.3s ease;
+}
+
+/* ========================= */
+/* OVERLAY */
+/* ========================= */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1998;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ========================= */
+/* MOBILE MENU */
+/* ========================= */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 85%;
+  height: 100vh;
+  background: #ffffff;
+  transition: right 0.4s ease;
+  z-index: 1999;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+/* Header do mobile */
+.mobile-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Botão fechar */
+.close-icon {
+  font-size: 24px;
+  color: #11321F;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-icon:hover {
+  color: #D4A017;
+}
+
+/* Conteúdo */
+.mobile-content {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+/* Links */
+.mobile-content a {
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  color: #11321F;
+  transition: 0.3s;
+}
+
+.mobile-content a:hover {
+  color: #D4A017;
+}
+
+/* Botão delivery mobile */
+.mobile-btn {
+  margin-top: 10px;
+  width: 100%;
+}
+
+/* Redes sociais */
+.mobile-social {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.mobile-social a {
+  font-size: 22px;
+  color: #D4A017;
+  transition: 0.3s;
+}
+
+.mobile-social a:hover {
+  color: #11321F;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-action {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+@media (min-width: 901px) {
+  .mobile-menu,
+  .overlay {
+    display: none;
+  }
+}

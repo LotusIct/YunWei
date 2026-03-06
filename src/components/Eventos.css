@@ -1,0 +1,117 @@
+.eventos {
+  position: relative;
+  width: 100%;
+
+  background-image: url("../assets/muralha.png");
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* overlay escuro elegante */
+
+.eventos-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.55);
+}
+
+/* conteúdo */
+
+.eventos-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  text-align: center;
+  color: white;
+  padding: 80px 40px;
+}
+
+.eventos-tag {
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #D4A017;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.eventos-content h2 {
+  font-size: 42px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.eventos-content p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+/* botões */
+
+.eventos-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* botão reserva */
+
+.btn-reserva {
+  background: #D4A017;
+  color: #11321F;
+  border: none;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-reserva:hover {
+  background: white;
+  color: #11321F;
+}
+
+/* botão evento */
+
+.btn-evento {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 40px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-evento:hover {
+  background: white;
+  color: #11321F;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 900px) {
+
+  .eventos {
+    height: auto;
+    padding: 80px 20px;
+  }
+
+  .eventos-content h2 {
+    font-size: 30px;
+  }
+
+  .eventos-buttons {
+    flex-direction: column;
+  }
+
+}

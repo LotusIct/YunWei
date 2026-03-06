@@ -1,0 +1,141 @@
+.pratos {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+}
+
+/* slide base */
+
+.prato-slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+.prato-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+/* imagem com zoom cinematográfico */
+
+.prato-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1);
+  transition: transform 7s ease;
+}
+
+
+/* overlay elegante */
+
+.prato-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.274)
+  );
+}
+
+/* conteúdo */
+
+.prato-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 80px;
+  color: #fff;
+}
+
+/* animação do texto */
+
+.prato-slide.active h2 {
+  animation: slideUp 1s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.prato-content h2 {
+  font-size: 28px;
+  font-weight: 100;
+  margin-bottom: 30px;
+  max-width: 700px;
+}
+
+/* botão */
+
+.prato-btn {
+  background: rgba(212,160,23,0.9);
+  border: none;
+  padding: 14px 34px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.prato-btn:hover {
+  background: #ffffff;
+  color: #11321f;
+}
+
+/* indicador superior */
+
+.prato-indicator {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 3;
+  display: flex;
+  gap: 22px;
+}
+
+.prato-indicator span {
+  font-size: 18px;
+  color: rgba(255,255,255,0.4);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.prato-indicator span.active {
+  color: #ffffff;
+}
+
+/* mobile */
+
+@media (max-width: 900px) {
+
+  .prato-content {
+    padding: 40px;
+  }
+
+  .prato-content h2 {
+    font-size: 28px;
+  }
+
+  .prato-indicator {
+    left: 40px;
+  }
+}

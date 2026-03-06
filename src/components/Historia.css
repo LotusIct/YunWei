@@ -1,0 +1,91 @@
+/* ========================= */
+/* HISTORIA SECTION */
+/* ========================= */
+
+.historia {
+  width: 100%;
+  padding: 120px 40px;
+  background: #f9f9f7;
+}
+
+.historia-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
+
+.historia-header {
+  margin-bottom: 60px;
+}
+
+.historia-tag {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #d4a017;
+  font-weight: 500;
+}
+
+.historia-header h2 {
+  font-size: 42px;
+  font-weight: 600;
+  color: #11321f;
+  margin-top: 15px;
+}
+
+/* ========================= */
+/* CONTENT */
+/* ========================= */
+
+.historia-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.historia-content p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.historia-content strong {
+  color: #11321f;
+}
+
+.historia-highlight {
+  margin-top: 30px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #11321f;
+  border-left: 3px solid #d4a017;
+  padding-left: 20px;
+}
+
+/* ========================= */
+/* RESPONSIVO */
+/* ========================= */
+
+@media (max-width: 900px) {
+  .historia {
+    padding: 80px 24px;
+    text-align: center;
+  }
+
+  .historia-header h2 {
+    font-size: 30px;
+     margin-top: none;
+  }
+
+  .historia-content p {
+    font-size: 16px;
+    margin-top: -20px;
+  }
+
+  .historia-highlight {
+    font-size: 18px;
+  }
+}

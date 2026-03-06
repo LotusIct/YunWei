@@ -1,0 +1,138 @@
+/* ===== CONTAINER ===== */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 80px 20px;
+}
+
+/* ===== HERO ===== */
+.historia-hero img {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== INTRO ===== */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.intro-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.intro-text p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.intro-img img {
+  width: 100%;
+  border-radius: 12px;
+  height: auto;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+  display: block;
+}
+
+/* ===== GRID SECTIONS ===== */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+/* ===== TEXT ===== */
+.historia-text h2 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.historia-text p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ===== IMAGENS ===== */
+.historia-img img {
+  width: 100%;
+  border-radius: 10px;
+  height: auto;
+  display: block;
+}
+
+/* ===== BANNER FINAL ===== */
+.historia-banner {
+  position: relative;
+  margin-top: 80px;
+}
+
+.historia-banner img {
+  width: 100%;
+  height: 60vh;
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay semi-transparente */
+.banners-overlay {
+  position: absolute;
+  inset: 0; /* top:0; right:0; bottom:0; left:0; */
+  background: rgba(0, 0, 0, 0.226); /* ajuste a opacidade aqui */
+  z-index: 1; /* fica abaixo do conteúdo */
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  z-index: 2; /* acima do overlay */
+}
+
+.banner-content h2 {
+  font-size: 42px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.banner-line {
+  width: 60px;
+  height: 3px;
+  background: #c9a35d;
+  margin: 20px auto;
+}
+
+.banner-content span {
+  letter-spacing: 3px;
+  font-size: 18px;
+}
+/* ===== RESPONSIVO ===== */
+@media(max-width:900px){
+  .grid, .intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .intro-text h2, .historia-text h2 {
+    font-size: 28px;
+  }
+}
